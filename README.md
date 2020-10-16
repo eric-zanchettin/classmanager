@@ -37,7 +37,7 @@ possibilitie to any student to filter and choose their classes based on their in
 <div align="center">
   <code width="900px">npm install</code>
 </div>
-<p>This will install all dependencies used on this project, after that, you need to create the database with these specifications:</p>
+<p>This will install all dependencies used on this project, after that, you need to create an PostgreSQL database with these specifications:</p>
 <code>
            
             CREATE DATABASE teachers
@@ -67,6 +67,10 @@ possibilitie to any student to filter and choose their classes based on their in
               		REFERENCES teachers(id)
             )
 </code>
+<p><b>IMPORTANT:</b> Remember to change the db.js inside the config file informing your credentials to the PostegreSQL Pool!!!</p>
+<p align="center">
+  <img width="auto" height="auto" src="https://i.imgur.com/zQ1RdY7.png" />
+</p>
 <p>Now you just have to run the server with:</p>
 <div align="center">
   <code width="900px">npm start</code>
