@@ -1,0 +1,39 @@
+            <div class="item">
+                <div>URL do Avatar</div>
+                <div><input placeholder="https:// ..." type="url" name="avatar_url" value="{{ teacher.avatar_url }}"/></div>
+            </div>
+
+            <div class="item">
+                <div>Nome Professor(a)</div>
+                <div><input placeholder="Seu nome ..." type="text" name="name" value="{{ teacher.name }}" /></div>
+            </div>
+
+            <div class="item">
+                <div>Data de Nascimento</div>
+                <div><input type="date" name="birth" value="{{ teacher.birth }}" /></div>
+            </div>
+
+            <div class="item">
+                <div>Grau de Escolaridade</div>
+                <select name="formation">
+                    <option {% if teacher.formation == "Ensino Médio Completo" %} selected {% endif %} >Ensino Médio Completo</option>
+                    <option {% if teacher.formation == "Ensino Superior Completo" %} selected {% endif %} >Ensino Superior Completo</option>
+                    <option {% if teacher.formation == "Mestrado" %} selected {% endif %} >Mestrado</option>
+                    <option {% if teacher.formation == "Doutorado" %} selected {% endif %} >Doutorado</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <div>Modalidade de Aula</div>
+                <div>
+                    <span><input type="radio" name="classType" value="Presencial" {% if teacher.classType == "Presencial" %} checked {% endif %} /> Presencial</span>
+                    <span><input type="radio" name="classType" value="EAD" {% if teacher.classType == "EAD" %} checked {% endif %} /> EAD</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Matérias Lecionadas</div>
+                <input placeholder="Separe cada matéria por Vírgula ," type="text" name="classes" value="{{ teacher.classes }}">
+            </div>
+
+            <button type="submit">Salvar</button>

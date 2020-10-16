@@ -1,0 +1,57 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <form class="card" method="POST" action="/teachers">
+
+        <section class="avatar">
+        </section>
+
+        <section class="details">
+
+            <h3>Cadastrar Novo Professor</h3>
+
+            <div class="item">
+                <div>URL do Avatar</div>
+                <div><input placeholder="https:// ..." type="url" name="avatar_url"/></div>
+            </div>
+
+            <div class="item">
+                <div>Nome Professor(a)</div>
+                <div><input placeholder="Seu nome ..." type="text" name="name" /></div>
+            </div>
+
+            <div class="item">
+                <div>Data de Nascimento</div>
+                <div><input type="date" name="birth" /></div>
+            </div>
+
+            <div class="item">
+                <div>Grau de Escolaridade</div>
+                <select name="formation">
+                    <option>Ensino Médio Completo</option>
+                    <option>Ensino Superior Completo</option>
+                    <option>Mestrado</option>
+                    <option>Doutorado</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <div>Modalidade de Aula</div>
+                <div>
+                    <span><input type="radio" name="classType" value="Presencial" checked /> Presencial</span>
+                    <span><input type="radio" name="classType" value="EAD" /> EAD</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Matérias Lecionadas</div>
+                <input placeholder="Separe cada matéria por Vírgula ," type="text" name="classes">
+            </div>
+
+            <button type="submit">Salvar</button>
+
+        </section>
+    </form>
+
+{% endblock content %}
